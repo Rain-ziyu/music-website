@@ -21,7 +21,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @RestController
-@Controller
+
 public class ConsumerController {
 
     @Autowired
@@ -31,12 +31,11 @@ public class ConsumerController {
     public class MyPicConfig implements WebMvcConfigurer {
         @Override
         public void addResourceHandlers(ResourceHandlerRegistry registry) {
-            registry.addResourceHandler("/avatorImages/**").addResourceLocations("file:/Users/hongweiyin/Documents/github-workspace/music-website/music-server/avatorImages/");
+            registry.addResourceHandler("/avatorImages/**").addResourceLocations("file:/opt/apps/avatorImages/");
         }
     }
 
 //    添加用户
-    @ResponseBody
     @RequestMapping(value = "/user/add", method = RequestMethod.POST)
     public Object addUser(HttpServletRequest req){
         JSONObject jsonObject = new JSONObject();
@@ -97,10 +96,8 @@ public class ConsumerController {
     }
 
 //    判断是否登录成功
-    @ResponseBody
     @RequestMapping(value = "/user/login/status", method = RequestMethod.POST)
     public Object loginStatus(HttpServletRequest req, HttpSession session){
-
         JSONObject jsonObject = new JSONObject();
         String username = req.getParameter("username");
         String password = req.getParameter("password");
@@ -118,7 +115,6 @@ public class ConsumerController {
             jsonObject.put("msg", "用户名或密码错误");
             return jsonObject;
         }
-
     }
 
 //    返回所有用户
@@ -142,7 +138,6 @@ public class ConsumerController {
     }
 
 //    更新用户信息
-    @ResponseBody
     @RequestMapping(value = "/user/update", method = RequestMethod.POST)
     public Object updateUserMsg(HttpServletRequest req){
         JSONObject jsonObject = new JSONObject();
@@ -157,7 +152,6 @@ public class ConsumerController {
         String location = req.getParameter("location").trim();
 //        String avator = req.getParameter("avator").trim();
 //        System.out.println(username+"  "+password+"  "+sex+"   "+phone_num+"     "+email+"      "+birth+"       "+introduction+"      "+location);
-
         if (username.equals("") || username == null){
             jsonObject.put("code", 0);
             jsonObject.put("msg", "用户名或密码错误");

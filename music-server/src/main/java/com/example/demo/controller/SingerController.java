@@ -29,7 +29,7 @@ public class SingerController {
     public class MyPicConfig implements WebMvcConfigurer {
         @Override
         public void addResourceHandlers(ResourceHandlerRegistry registry) {
-            registry.addResourceHandler("/img/singerPic/**").addResourceLocations("file:/Users/hongweiyin/Documents/github-workspace/music-website/music-server/img/singerPic/");
+            registry.addResourceHandler("/img/singerPic/**").addResourceLocations("file:/opt/apps/img/singerPic/");
         }
     }
 

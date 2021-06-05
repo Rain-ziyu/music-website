@@ -11,7 +11,7 @@ const router = {
     {
       path: '/login-in',
       name: 'login-in',
-      component: () => import('@/pages/LoginIn'),
+      component: () => import('@/pages/LoginIn')
     },
     {
       path: '/sign-up',
@@ -64,7 +64,7 @@ const router = {
       component: () => import('@/pages/Setting')
     }
   ],
-  scrollBehavior(to, from, savedPosition) {
+  scrollBehavior (to, from, savedPosition) {
     return { x: 0, y: 0 }
   }
 }

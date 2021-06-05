@@ -27,13 +27,13 @@ export default {
     getSearchList () {
       if (!this.$route.query.keywords) return
       getSongListOfLikeTitle(this.$route.query.keywords)
-      .then(res => {
-        if (!res.length) {
-          this.notify('暂无该歌曲内容', 'warning')
-        } else {
-          this.albumDatas = res
-        }
-      })
+        .then(res => {
+          if (!res.length) {
+            this.notify('暂无该歌曲内容', 'warning')
+          } else {
+            this.albumDatas = res
+          }
+        })
     }
   }
 }

@@ -19,7 +19,6 @@ public class RankServiceImpl implements RankService {
 
     @Override
     public boolean addRank(Rank rank) {
-
         return rankMapper.insertSelective(rank) > 0 ? true:false;
     }
 }

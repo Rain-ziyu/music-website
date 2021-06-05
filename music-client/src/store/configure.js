@@ -1,6 +1,6 @@
 const configure = {
   state: {
-    HOST: 'http://localhost:8888',
+    HOST: 'http://8.131.75.251:8888',
     loginIn: false, // 用户是否登录
     searchword: '', // 搜索关键词
     showAside: false, // 是否显示侧边栏
